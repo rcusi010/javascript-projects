@@ -1,6 +1,62 @@
-let engineIndicatorLight = 'red blinking';
+let engineIndicatorLight = 'green blinking';
+let spaceSuitsOn = true;
+let shuttleCabinReady = true;
+let crewStatus = (spaceSuitsOn && shuttleCabinReady);
 let fuelLevel = 21000;
 let engineTemperature = 1200;
+let computerStatusCode = 200;
+let shuttleSpeed = 15000;
+let commandOverride = false
+console.log(typeof crewStatus);
+
+if (engineIndicatorLight === "green blinking") {
+    console.log("engines have started");
+ } else if (engineIndicatorLight === "green blinking") {
+    console.log("engines are preparing to start");
+ } else {
+    console.log("engines are off");
+ }
+ if (crewStatus = true){
+    console.log("crew Ready");
+ } else {
+    console.log("Crew not ready");
+ }
+ if (computerStatusCode = 200){
+    console.log("Please stand by");
+ } else if (computerStatusCode = 400){
+    console.log("Sucess! Computer Online.");
+ } else {
+    console.log ("Alert!: Computer offline!");
+ }
+ if (shuttleSpeed > 17500){
+    console.log("ALERT: Escape velocity reached!");
+ } else if (shuttleSpeed < 8000){
+    console.log("ALERT: Cannot maintain orbit!");
+ } else {
+    console.log ("Stable speed.");
+ }
+ if (fuelLevel < 1000 || engineTemperature > 3500 || engineIndicatorLight == 'blinking red'){
+    console.log ("ENGINE FAILURE IMMINENT!");
+    engineIndicatorLight = 'red blinking';;
+  } if (fuelLevel < 5000 || engineTemperature > 2500){
+      console.log ("Check fuel level. Engines running hot.");
+      engineIndicatorLight = 'red blinking';
+    }  if (fuelLevel > 5000 || engineTemperature <= 2500){
+          console.log ("level above 25%. Engines good.");
+          engineIndicatorLight = 'green blinking';
+      }  if (fuelLevel > 10000 || engineTemperature <= 2500){
+               console.log ("level above 50%. Engines good.");
+               engineIndicatorLight = 'green blinking';
+        }  if (fuelLevel > 20000 || engineTemperature <= 2500){
+                  console.log ("Full tank. Engines good.");
+                  engineIndicatorLight = 'green blinking';
+             } else {console.log ("Fuel and engine status pending…");
+            }
+            if (fuelLevel > 20000  && (engineIndicatorLight == "green blinking" && commandOverride == false)) {
+               console.log("Clear to launch!");
+            } else {
+               console.log("Launch scrubbed!");
+            }
 
 /* 5) Implement the following checks using if/else if/else statements:
 
